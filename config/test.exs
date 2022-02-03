@@ -32,4 +32,6 @@ config :phoenix, :plug_init_mode, :runtime
 # Use Ecto's sandbox in test
 config :chatter, :sql_sandbox, true
 
-config :wallaby, driver: Wallaby.Chrome
+config :wallaby,
+  driver: Wallaby.Chrome,
+  chromedriver: [headless: true]
