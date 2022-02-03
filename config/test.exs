@@ -33,5 +33,4 @@ config :phoenix, :plug_init_mode, :runtime
 config :chatter, :sql_sandbox, true
 
 config :wallaby,
-  driver: Wallaby.Chrome,
-  chromedriver: [headless: true]
+  driver: Wallaby.Chrome
