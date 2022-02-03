@@ -25,7 +25,7 @@ To get chrome driver version follow below steps
 ## Setting up X Server for WSL (kept here for reference)
 
 The X Server
-Download and install VcXsrv in Windows. Once installed, run xlaunch.exe (from the VcXsrv folder in Program Files). You can leave most of the settings as default, but make sure to check “Disable access control”. Allow it through the firewall if prompted when you first run it.
+Download and install VcXsrv (https://sourceforge.net/projects/vcxsrv/) in Windows. Once installed, run xlaunch.exe (from the VcXsrv folder in Program Files). You can leave most of the settings as default, but make sure to check “Disable access control”. Allow it through the firewall if prompted when you first run it.
 
 In Linux the DISPLAY environment variable tells GUI applications at which IP address the X Server is that we want to use. Since in WSL2 the IP address of Windows land is not localhost anymore, we need to set DISPLAY to the correct IP address:
 
