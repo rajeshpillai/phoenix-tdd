@@ -4,7 +4,7 @@ import {Socket} from "phoenix"
 
 let socket = new Socket("/socket", {params: {}})
 
-let chatRoomTitle = document.getElementById("title")
+let chatRoomTitle = document.getElementById("chat-room-title")
 
 if (chatRoomTitle) {
   let chatRoomName = chatRoomTitle.dataset.chatRoomName
@@ -26,7 +26,7 @@ if (chatRoomTitle) {
     messageItem.innerText = payload.body
     messages.appendChild(messageItem)
   })
-  
+
   channel.join()
     .receive("ok", resp => { console.log("Joined successfully", resp) })
     .receive("error", resp => { console.log("Unable to join", resp) })
