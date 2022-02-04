@@ -14,3 +14,9 @@
     - Create an outside test
     - Create an inside model test
     - Create a test for validation of name presence and uniqueness
+
+  - Show room
+
+- As a user, I can join a chat room, so that I can have a conversation with another user.
+
+
