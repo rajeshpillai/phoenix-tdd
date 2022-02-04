@@ -6,4 +6,8 @@ defmodule ChatterWeb.ChatRoomController do
 
     render(conn, "index.html", chat_rooms: chat_rooms)
   end
+
+  def new(conn, _params) do
+    render(conn, "new.html")
+  end
 end
