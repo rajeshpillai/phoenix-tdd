@@ -18,38 +18,38 @@ defmodule ChatterWeb.UserCanChatTest do
     user2 = build(:user) |> set_password("password") |> insert()
 
 
-    user =
+    session1 =
       metadata
-      |> new_user()
+      |> new_session()
       |> visit(rooms_index())
       |> sign_in(as: user1)
       |> join_room(room.name)
 
-    other_user =
+      session2 =
       metadata
-      |> new_user()
+      |> new_session()
       |> visit(rooms_index())
       |> sign_in(as: user2)
       |> join_room(room.name)
 
     # a user sends a message
-    user
+    session1
       |> add_message("Hi everyone")
 
     # second user sees message and respnds
-    other_user
+    session2
       |> assert_has(message("Hi everyone"))
       |> add_message("Hi, welcome to #{room.name}")
 
     # Assert the first user received the message
-    user
+    session1
     |> assert_has(message("Hi, welcome to #{room.name}"))
 
   end
 
-  defp new_user(metadata) do
-    {:ok, user} = Wallaby.start_session(metadata: metadata)
-    user
+  defp new_session(metadata) do
+    {:ok, session} = Wallaby.start_session(metadata: metadata)
+    session
   end
 
   defp rooms_index, do: Routes.chat_room_path(@endpoint, :index)
