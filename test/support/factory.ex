@@ -14,6 +14,14 @@ defmodule Chatter.Factory do
     }
   end
 
+  @spec set_password(
+          {map, map}
+          | %{
+              :__struct__ => atom | %{:__changeset__ => any, optional(any) => any},
+              optional(atom) => any
+            },
+          any
+        ) :: map
   def set_password(user, password) do
     user
     |> Ecto.Changeset.change(%{password: password})
