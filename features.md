@@ -8,3 +8,4 @@
     - change test to business term rather than technical term
     - extract Query.data to a meaningful function
     - improve test body to match the description
+    - remove redundant code from room.ex (as we don't need now.  Later we will add it as needed as per requirement)
