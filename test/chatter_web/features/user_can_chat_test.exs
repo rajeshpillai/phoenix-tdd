@@ -14,16 +14,22 @@ defmodule ChatterWeb.UserCanChatTest do
   test "user can chat with others successfully", %{metadata: metadata} do
     room = insert(:chat_room)
 
+    user1 = build(:user) |> set_password("password") |> insert()
+    user2 = build(:user) |> set_password("password") |> insert()
+
+
     user =
       metadata
       |> new_user()
       |> visit(rooms_index())
+      |> sign_in(as: user1)
       |> join_room(room.name)
 
     other_user =
       metadata
       |> new_user()
       |> visit(rooms_index())
+      |> sign_in(as: user2)
       |> join_room(room.name)
 
     # a user sends a message
