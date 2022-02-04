@@ -1,4 +1,4 @@
 # Features
 
-- Home page test
+- Home page test (smoke test)
 - Show a list of chat room (todo)
