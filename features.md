@@ -11,4 +11,6 @@
     - remove redundant code from room.ex (as we don't need now.  Later we will add it as needed as per requirement)
 - Creating Rooms
   - User story: As a user, I want to visit the chat room index page and create a chat room by name
-  
+    - Create an outside test
+    - Create an inside model test
+    - Create a test for validation of name presence and uniqueness
