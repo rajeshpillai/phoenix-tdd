@@ -2,3 +2,7 @@
 
 - Home page test (smoke test)
 - Show a list of chat room (todo)
+- Refactoring our feature test
+  - chat_room/index.html.eex
+    - prefer data-attributes to css class for testing feature
+    
