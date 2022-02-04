@@ -21,4 +21,25 @@ defmodule Chatter.ChatTest do
       assert %Ecto.Changeset{} = Chat.new_chat_room()
     end
   end
+
+  describe "create_chat_room/1" do
+    test "creates a room with valid params" do
+      params = string_params_for(:chat_room)
+
+      {:ok, room} = Chat.create_chat_room(params)
+
+      assert %Chat.Room{} = room
+      assert room.name == params["name"]
+    end
+
+    test "returns an error tuple if params are invalid" do
+      insert(:chat_room, name: "elixir")
+      params = string_params_for(:chat_room, name: "elixir")
+
+      {:error, changeset} = Chat.create_chat_room(params)
+
+      refute changeset.valid?
+      assert "has already been taken" in errors_on(changeset).name
+    end
+  end
 end
