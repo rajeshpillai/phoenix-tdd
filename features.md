@@ -7,3 +7,4 @@
     - prefer data-attributes to css class for testing feature
     - change test to business term rather than technical term
     - extract Query.data to a meaningful function
+    - improve test body to match the description
