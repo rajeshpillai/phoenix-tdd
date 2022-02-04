@@ -1,7 +1,6 @@
 defmodule ChatterWeb.UserVisitsRoomsPageTest  do
   use ChatterWeb.FeatureCase, async: true
 
-  import ChatterWeb.FeatureHelpers
 
   test "user visits rooms page to see a list of rooms", %{session: session} do
     [room1, room2] = insert_pair(:chat_room)
